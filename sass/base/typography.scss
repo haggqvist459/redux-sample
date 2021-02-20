@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: "Krona-One";
+    font-style: normal;
+    src: local("KronaOne"),
+    url('../assets/fonts/Krona_One/KronaOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    src: local("Roboto"),
+    url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+h3 {
+    font-family: "Krona-One";
+    font-variant: small-caps;
+}
+
+p {
+    font-family: "Roboto";
+}
+
+button {
+    font-family: "Roboto";
+}
+

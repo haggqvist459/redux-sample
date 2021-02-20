@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '/dist'),
         publicPath: '/',
-        filename: 'bundle.js'
+        filename: 'app.bundle.js'
     },
     module: {
         rules: [
@@ -45,11 +45,11 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
     },
     devServer: {
-        //   index: index.html,
+        port: 8082,
+        host: '0.0.0.0',
         hot: true,
-        //   inline: true,
-        port: 8080,
-        //   historyApiFallback: true,
+        historyApiFallback: true,
+        open: true,
     },
     plugins: [
         new CleanWebpackPlugin(),

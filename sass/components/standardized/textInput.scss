@@ -1,0 +1,35 @@
+.textInput {
+    // material-ui overrides
+    
+    //change the color of the placeholder text
+    .MuiFormLabel-root {
+        color: $primary-black;
+    }
+    //change the color of the placeholder text when field is focused
+    .MuiFormLabel-root.Mui-focused {
+        color: $primary-black;
+    }
+    
+    //change the color of the underline on focus
+    .MuiInput-underline:after {
+        border-bottom: 2px solid $primary-black;
+    }
+
+    //change the padding of the password icons to align it better
+    .MuiIconButton-root {
+        padding: 0px;
+        color: $primary-black;
+    }
+    
+    //password icons to correct black color
+    .MuiIconButton-colorPrimary {
+        color: $primary-black;
+    }
+
+    //account/email icon to correct black color
+    .MuiSvgIcon-colorPrimary {
+        color: $primary-black;
+    }
+}
+
+// standard textfield input 
