@@ -1,0 +1,7 @@
+export const ACTIONS = {
+    ADD_ITEM: "ADD_ITEM",
+    TOGGLE_ITEM: "TOGGLE_ITEM",
+    SET_FILTER: "SET_FILTER",
+    DELETE_ITEMS: "DELETE_ITEMS"
+}
+

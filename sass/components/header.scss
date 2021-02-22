@@ -1,0 +1,24 @@
+.header {
+    background-color: $azureish-white;
+    color: $primary-black;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+
+    h3{
+        font-size: 1.75rem;
+    }
+
+    //material-ui overrides
+    .MuiIconButton-root {
+        color: inherit;
+        padding: 0;
+    }
+
+    .MuiIconButton-root:hover {
+        background-color: transparent;
+    }
+}

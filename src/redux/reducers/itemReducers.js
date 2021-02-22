@@ -1,0 +1,43 @@
+import { ACTIONS } from "../../constants/actionConstants";
+
+const initialState = {
+  allIds: [],
+  byIds: {}
+};
+
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case ACTIONS.ADD_ITEM: {
+      const { id, content } = action.payload;
+      return {
+        ...state,
+        allIds: [...state.allIds, id],
+        byIds: {
+          ...state.byIds,
+          [id]: {
+            content,
+            picked: false
+          }
+        }
+      };
+    }
+    case ACTIONS.TOGGLE_ITEM: {
+      const { id } = action.payload;
+      return {
+        ...state,
+        byIds: {
+          ...state.byIds,
+          [id]: {
+            ...state.byIds[id],
+            picked: !state.byIds[id].picked
+          }
+        }
+      };
+    }
+    case ACTIONS.DELETE_ITEMS: {
+      return state = initialState
+    }
+    default:
+      return state;
+  }
+}

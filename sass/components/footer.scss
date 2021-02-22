@@ -1,0 +1,16 @@
+.footer {
+    // display: block;
+    min-height: 10vh;
+    min-width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    @media screen and (max-width: 980px) {
+        // position: fixed !important;
+    }
+
+    @media screen and (max-width: 500px) {
+        // position: fixed !important;
+    }
+}
+

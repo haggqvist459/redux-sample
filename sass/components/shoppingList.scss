@@ -1,0 +1,80 @@
+.shopping-list {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 7.5vw;
+    list-style: none;
+
+    &__item {
+        cursor: pointer;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        margin-top: 3vw;
+
+        &__text {
+            margin-left: 10px;
+        }
+
+        &__text--picked {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.add-item {
+    max-width: 100vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+
+    //material-ui overrides
+
+    //adjust the sizes of the input field
+    .MuiFormControl-root {
+        min-width: 100%;
+    }
+    .MuiIconButton-root:hover {
+        background-color: transparent;
+    }
+    //material-ui overrides
+    .MuiSvgIcon-root {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .grocery-list-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 7.5vw;
+        margin-right: 7.5vw;
+    }
+
+    .add-item {
+        align-self: center;
+        min-width: 450px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+
+        //material-ui overrides
+        .MuiSvgIcon-root {
+            font-size: 4rem;
+        }
+
+        .MuiInputAdornment-root {
+            margin-bottom: 20px;
+        }
+    }
+
+    .shopping-list {
+        max-width: 450px;
+        margin-left: 7.5vw;
+        align-self: flex-start;
+    }
+
+    //material-ui overrides
+    .MuiSvgIcon-root {
+        font-size: 2.5rem;
+    }
+}
+
