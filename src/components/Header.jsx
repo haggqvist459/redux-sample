@@ -6,16 +6,10 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const Header = ({ deleteItems }) => {
 
-
-    const handleDeleteItems = () => {
-        console.log("bin icon pressed")
-        deleteItems();   
-    };
-      
     return(
         <div className="header">
             <h3> Grocery List </h3>
-            <IconButton onClick={handleDeleteItems}>
+            <IconButton onClick={deleteItems}>
                 <DeleteForeverIcon fontSize="large"/>
             </IconButton>
         </div>

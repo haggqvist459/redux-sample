@@ -14,29 +14,33 @@ class AddItem extends React.Component {
     this.setState({ input });
   };
 
-  handleAddItem = () => {
+  handleAddItem = e => {
     this.props.addItem(this.state.input);
     this.setState({ input: "" });
+    e.preventDefault();
   };
-  
+
+
   render() {
     return (
       <div className="add-item">
-          <FormControl className="textInput">
-            <InputLabel htmlFor="add-item"></InputLabel>
+        <form onSubmit={this.handleAddItem}>
+          <div className="textInput">
+            <InputLabel htmlFor="add-item"/>
             <Input
               id="add-item"
               value={this.state.input}
               onChange={e => this.updateInput(e.target.value)}
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton type="submit" onClick={this.handleAddItem}>
+                  <IconButton type="submit">
                     <PlaylistAddIcon />
                   </IconButton>
                 </InputAdornment>
               }
             />
-          </FormControl>
+          </div>
+        </form>
       </div>
     );
   }
@@ -46,4 +50,4 @@ export default connect(
   null,
   { addItem }
 )(AddItem);
-// export default AddItem;
+

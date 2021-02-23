@@ -8,10 +8,6 @@ export const getItemList = store =>
 export const getItemId = (store, id) =>
     getItemsState(store) ? { ...getItemsState(store).byIds[id], id } : {};
 
-/**
- * example of a slightly more complex selector
- * select from store combining information from multiple reducers
- */
 export const getItems = store =>
     getItemList(store).map(id => getItemId(store, id));
 
