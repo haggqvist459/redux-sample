@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: path.resolve(__dirname, 'dist')
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -56,6 +57,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         }),
-
-    ]
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: 'assets', to: '' },
+            ],
+      
+          })
+        ]
 };
