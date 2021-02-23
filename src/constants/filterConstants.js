@@ -1,5 +1,5 @@
 export const VISIBILITY_FILTERS = {
     ALL: "all",
-    PICKED: "picked",
-    REMAINING: "remaining"
+    REMAINING: "remaining",
+    PICKED: "picked"
 };
