@@ -5,9 +5,9 @@ const path = require('path');
 module.exports = {
     entry: ['./src/index.js', './sass/app.scss'],
     output: {
-        path: path.resolve(__dirname, '/dist'),
-        publicPath: '/',
-        filename: 'app.bundle.js'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
