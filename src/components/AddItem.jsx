@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addItem } from "../redux/itemActions";
-import { FormControl, InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
+import { InputLabel, Input, InputAdornment, IconButton } from '@material-ui/core';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 
 class AddItem extends React.Component {

@@ -1,11 +1,11 @@
-import { ACTIONS } from '../constants/actionConstants'
+import { ACTIONS } from '../constants/actionConstants';
+import { v4 as uuid} from 'uuid';
 
-let nextItemId = 0;
 
 export const addItem = content => ({
   type: ACTIONS.ADD_ITEM,
   payload: {
-    id: ++nextItemId,
+    id: uuid(),
     content
   }
 });
