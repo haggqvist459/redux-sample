@@ -24,9 +24,12 @@ class AddItem extends React.Component {
   render() {
     return (
       <div className="add-item">
-        <form onSubmit={this.handleAddItem}>
+        <form
+          onSubmit={this.handleAddItem}
+          autoComplete="off"
+        >
           <div className="textInput">
-            <InputLabel htmlFor="add-item"/>
+            <InputLabel htmlFor="add-item" />
             <Input
               id="add-item"
               value={this.state.input}
