@@ -1,12 +1,15 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+
 const path = require('path');
 
 module.exports = {
     entry: ['./src/index.js', './sass/app.scss'],
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
@@ -52,6 +55,19 @@ module.exports = {
         historyApiFallback: true,
         open: true,
     },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+        splitChunks: {
+            chunks: "all",
+            minSize: 10000,
+            maxSize: 244000
+          }
+    },
+    performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -60,9 +76,9 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-              { from: 'assets', to: '' },
+                { from: 'assets/favicon', to: '' },
             ],
-      
-          })
-        ]
+
+        })
+    ]
 };
