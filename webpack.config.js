@@ -58,11 +58,11 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],
-        splitChunks: {
-            chunks: "all",
-            minSize: 10000,
-            maxSize: 244000
-        },
+        // splitChunks: {
+        //     chunks: "all",
+        //     minSize: 10000,
+        //     maxSize: 244000
+        // },
         splitChunks: {
 			cacheGroups: {
 				commons: {

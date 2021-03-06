@@ -4,6 +4,7 @@ import { deleteAll } from '../redux/itemActions';
 import { IconButton } from '@material-ui/core';
 import { DeleteForever } from '@material-ui/icons';
 
+
 const Header = ({ deleteAll }) => {
 
     return(
