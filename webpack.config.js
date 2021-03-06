@@ -62,7 +62,16 @@ module.exports = {
             chunks: "all",
             minSize: 10000,
             maxSize: 244000
-          }
+        },
+        splitChunks: {
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all'
+				}
+			}
+		}
     },
     performance: {
         maxEntrypointSize: 512000,

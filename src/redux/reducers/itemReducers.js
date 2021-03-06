@@ -34,7 +34,15 @@ export default function(state = initialState, action) {
         }
       };
     }
-    case ACTIONS.DELETE_ITEMS: {
+    case ACTIONS.DELETE_ITEM: {
+    
+      delete state.byIds[action.payload.id];
+      return {
+        allIds: state.allIds.filter(item => item !== action.payload.id),
+        byIds: state.byIds
+      };
+    }
+    case ACTIONS.DELETE_ALL: {
       return state = initialState
     }
     default:

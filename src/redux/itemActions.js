@@ -1,5 +1,5 @@
 import { ACTIONS } from '../constants/actionConstants';
-import { v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 
 export const addItem = content => ({
@@ -15,12 +15,19 @@ export const toggleItem = id => ({
   payload: { id }
 });
 
-
 export const setFilter = filter => ({
   type: ACTIONS.SET_FILTER,
   payload: { filter }
 });
 
-export const deleteItems = () => ({
-  type: ACTIONS.DELETE_ITEMS
+export const deleteItem = item => ({
+  type: ACTIONS.DELETE_ITEM,
+  payload: {
+    id: item.id,
+    content: item.content
+  }
+});
+
+export const deleteAll = () => ({
+  type: ACTIONS.DELETE_ALL
 })

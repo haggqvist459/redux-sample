@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { deleteItems } from '../redux/itemActions';
+import { deleteAll } from '../redux/itemActions';
 import { IconButton } from '@material-ui/core';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import { DeleteForever } from '@material-ui/icons';
 
-const Header = ({ deleteItems }) => {
+const Header = ({ deleteAll }) => {
 
     return(
         <div className="header">
             <h3> Grocery List </h3>
-            <IconButton onClick={deleteItems}>
-                <DeleteForeverIcon fontSize="large"/>
+            <IconButton onClick={deleteAll}>
+                <DeleteForever fontSize="large"/>
             </IconButton>
         </div>
     )
@@ -20,5 +20,5 @@ const Header = ({ deleteItems }) => {
 
 export default connect(
     null,
-    { deleteItems }
+    { deleteAll }
 )(Header);

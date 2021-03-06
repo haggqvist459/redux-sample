@@ -1,23 +1,44 @@
 .shopping-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    margin-left: 7.5vw;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
     list-style: none;
 
     &__item {
+        // width: 90%;
         cursor: pointer;
         line-height: 1.5;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
         margin-top: 3vw;
+        // border: 1px solid $primary-black;
+
+        &__toggle {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            // border: 1px solid $primary-black;
+        }
 
         &__text {
             margin-left: 10px;
+            // margin-right: 50%;
+            
         }
 
         &__text--picked {
             text-decoration: line-through;
+        }
+
+        &__delete {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
         }
     }
 }
@@ -50,6 +71,7 @@
 
 @media screen and (min-width: 768px) {
     .grocery-list-container {
+        // background-color: $primary-background;
         display: flex;
         flex-direction: column;
         margin-left: 7.5vw;
@@ -61,6 +83,7 @@
         min-width: 450px;
         margin-left: 10vw;
         margin-right: 10vw;
+        // background-color: $nyanza;
 
         //material-ui overrides
         .MuiSvgIcon-root {
@@ -72,12 +95,15 @@
         }
     }
 
-    .shopping-list {
-        max-width: 450px;
-        margin-left: 7.5vw;
-        align-self: flex-start;
-    }
+    // .shopping-list {
     
+    //     background-color: $nyanza;
+
+    //     &__item {
+    //         background-color: $pink-lace;
+    //     }
+    // }
+
     //material-ui overrides
     .MuiSvgIcon-root {
         font-size: 2.5rem;

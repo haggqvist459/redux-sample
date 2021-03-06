@@ -7,7 +7,7 @@ import { getItemsByVisibilityFilter } from "../redux/selectors";
 const ItemList = ({ items }) => (
   <ul className="shopping-list">
     {items && items.length
-      ? items.map((item, index) => {
+      ? items.map((item) => {
           return <Item key={`item-${item.id}`} item={item} />;
         })
       : ""}
