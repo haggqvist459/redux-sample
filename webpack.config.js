@@ -61,9 +61,9 @@ module.exports = {
         minimize: true,
         minimizer: [new TerserPlugin()],
         splitChunks: {
-            // chunks: "all",
-            // minSize: 10000,
-            // maxSize: 244000,
+            chunks: "all",
+            minSize: 10000,
+            maxSize: 244000,
             cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
@@ -73,10 +73,10 @@ module.exports = {
             }
         }
     },
-    performance: {
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
-    },
+    // performance: {
+    //     maxEntrypointSize: 512000,
+    //     maxAssetSize: 512000
+    // },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
