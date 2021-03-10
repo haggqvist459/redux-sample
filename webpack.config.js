@@ -2,8 +2,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 const path = require('path');
+const zlib = require('zlib');
 
 module.exports = {
     entry: ['./src/index.js', './sass/app.scss'],
@@ -58,20 +60,18 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [new TerserPlugin()],
-        // splitChunks: {
-        //     chunks: "all",
-        //     minSize: 10000,
-        //     maxSize: 244000
-        // },
         splitChunks: {
-			cacheGroups: {
-				commons: {
-					test: /[\\/]node_modules[\\/]/,
-					name: 'vendors',
-					chunks: 'all'
-				}
-			}
-		}
+            // chunks: "all",
+            // minSize: 10000,
+            // maxSize: 244000,
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     },
     performance: {
         maxEntrypointSize: 512000,
@@ -88,6 +88,26 @@ module.exports = {
                 { from: 'assets/favicon', to: '' },
             ],
 
-        })
+        }),
+        new CompressionPlugin({
+            asset: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$||\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+        }),
+        new CompressionPlugin({
+            filename: "[path][base].br[query]",
+            algorithm: "brotliCompress",
+            test: /\.(js|css|html|svg)$/,
+            compressionOptions: {
+                params: {
+                    [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+                },
+            },
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false,
+        }),
     ]
 };
