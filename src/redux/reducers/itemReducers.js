@@ -36,7 +36,7 @@ export default function(state = initialState, action) {
     }
     case ACTIONS.DELETE_ITEM: {
     
-      delete state.byIds[action.payload.id];
+      delete state.byIds[action.payload.id]; //probably not the way to go about it. check the javascript stuff project!
       return {
         allIds: state.allIds.filter(item => item !== action.payload.id),
         byIds: state.byIds
