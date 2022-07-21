@@ -10,4 +10,4 @@
 
 
 ##### Todo on the Todo list: 
--[ ] replace sass with styled-components for react 
+- [ ] replace sass with styled-components for react 
