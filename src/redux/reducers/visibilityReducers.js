@@ -1,7 +1,7 @@
 import { ACTIONS } from "../../constants/actionConstants";
 import { VISIBILITY_FILTERS } from '../../constants/filterConstants';
 
-const initialState = VISIBILITY_FILTERS.ALL;
+const initialState = VISIBILITY_FILTERS.REMAINING;
 
 const visibilityFilter = (state = initialState, action) => {
   switch (action.type) {
